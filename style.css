@@ -1,0 +1,544 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #172033;
+    background: #f8fafc;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    background: #fff;
+    box-shadow: 0 2px 12px #00000008;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #172033;
+}
+
+.logo span,
+.hero h1 span {
+    color: #0d9488;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: #475569;
+    font-size: 14px;
+}
+
+.navbar nav a:hover {
+    color: #0d9488;
+}
+
+.nav-button,
+.primary-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0d9488;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background: #0f766e;
+}
+
+/* Hero */
+
+.hero {
+    padding: 75px 9%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(120deg, #ecfeff, #f0fdfa);
+}
+
+.tagline {
+    color: #0d9488;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.18;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.tagline) {
+    color: #64748b;
+    max-width: 480px;
+    margin-bottom: 25px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.hero-stats h3 {
+    font-size: 23px;
+}
+
+.hero-stats p {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.hero-visual {
+    text-align: center;
+    background: white;
+    padding: 40px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #0f766e15;
+}
+
+.visual-icon {
+    font-size: 100px;
+    margin-bottom: 15px;
+}
+
+.hero-visual h2 {
+    margin-bottom: 8px;
+}
+
+.hero-visual p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.visual-badge {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Jobs section */
+
+.jobs-section {
+    padding: 70px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.section-heading > p:last-child {
+    color: #64748b;
+}
+
+.search-panel {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 12px;
+    padding: 18px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 35px;
+}
+
+.search-panel input,
+.search-panel select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #172033;
+    outline: none;
+}
+
+.search-panel input:focus,
+.search-panel select:focus,
+.modal input:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 3px #0d94881a;
+}
+
+.results-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.results-heading p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 23px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #0000000c;
+}
+
+.company-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #ccfbf1;
+    font-size: 25px;
+    margin-bottom: 16px;
+}
+
+.job-card h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.company-name {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 15px 0;
+}
+
+.job-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.job-salary {
+    color: #0d9488;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.apply-button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 7px;
+    background: #0d9488;
+    color: white;
+    font-weight: bold;
+}
+
+.apply-button:hover {
+    background: #0f766e;
+}
+
+.no-jobs {
+    text-align: center;
+    color: #64748b;
+    padding: 30px;
+}
+
+/* About */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 45px 9%;
+    background: #ecfeff;
+    margin: 0 7% 65px;
+    border-radius: 15px;
+}
+
+.about-icon {
+    font-size: 65px;
+}
+
+.about-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.about-section p:last-child {
+    color: #475569;
+    max-width: 700px;
+}
+
+/* Application modal */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: #0f172acc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 20;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    margin: auto;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #64748b;
+}
+
+.modal-content h2 {
+    margin-bottom: 5px;
+}
+
+.selected-job {
+    color: #0d9488;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.modal form label {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 15px 0 6px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+.modal input[type="file"] {
+    font-size: 12px;
+}
+
+.form-note {
+    color: #64748b;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+#form-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #0f766e;
+}
+
+/* Footer */
+
+footer {
+    padding: 28px 7%;
+    background: #172033;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+footer .logo {
+    color: white;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* Responsive design */
+
+@media (max-width: 900px) {
+    .hero {
+        padding: 55px 6%;
+        gap: 25px;
+    }
+
+    .job-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navbar {
+        padding: 18px 4%;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-visual {
+        padding: 25px;
+    }
+
+    .visual-icon {
+        font-size: 75px;
+    }
+
+    .hero-stats {
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .jobs-section {
+        padding: 45px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .search-panel {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+        margin: 0 5% 45px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
