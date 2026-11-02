@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobConnect | Find Your Next Job</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">Job<span>Connect</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#jobs">Find Jobs</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#jobs" class="nav-button">Explore Jobs</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">YOUR CAREER STARTS HERE</p>
+
+            <h1>Find a job that<br>
+                <span>moves you forward.</span>
+            </h1>
+
+            <p>
+                Discover opportunities, develop your skills,
+                and take the next step in your career.
+            </p>
+
+            <a href="#jobs" class="primary-button">
+                Find Jobs →
+            </a>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>6+</h3>
+                    <p>Demo Jobs</p>
+                </div>
+
+                <div>
+                    <h3>3</h3>
+                    <p>Job Categories</p>
+                </div>
+
+                <div>
+                    <h3>24/7</h3>
+                    <p>Explore Anytime</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-icon">💼</div>
+            <h2>Your next opportunity</h2>
+            <p>One application could be your next big step.</p>
+
+            <div class="visual-badge">🚀 Start your journey</div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="jobs-section" id="jobs">
+
+        <div class="section-heading">
+            <p class="tagline">OPPORTUNITIES FOR YOU</p>
+            <h2>Find Your Dream Job</h2>
+            <p>Search our sample job listings.</p>
+        </div>
+
+        <div class="search-panel">
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search job title or company..."
+                aria-label="Search jobs"
+            >
+
+            <select id="type-filter" aria-label="Filter by job type">
+                <option value="all">All job types</option>
+                <option value="Remote">Remote</option>
+                <option value="Onsite">Onsite</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+
+            <select id="category-filter" aria-label="Filter by category">
+                <option value="all">All categories</option>
+                <option value="Frontend Development">Frontend</option>
+                <option value="Backend Development">Backend</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+            </select>
+        </div>
+
+        <div class="results-heading">
+            <h3>Latest Opportunities</h3>
+            <p id="job-count">Loading jobs...</p>
+        </div>
+
+        <div id="job-list" class="job-grid"></div>
+
+        <p id="no-jobs" class="no-jobs" hidden>
+            No jobs found. Try another search.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-icon">🎯</div>
+
+        <div>
+            <p class="tagline">ABOUT JOBCONNECT</p>
+            <h2>Helping you take the next step.</h2>
+            <p>
+                JobConnect is a demonstration job portal built with
+                HTML, CSS, and JavaScript. It helps job seekers explore
+                sample opportunities and practise submitting applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div class="modal" id="application-modal" hidden>
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="close-modal"
+                id="close-modal"
+                aria-label="Close application form"
+            >&times;</button>
+
+            <p class="tagline">TAKE THE NEXT STEP</p>
+            <h2>Apply for this Job</h2>
+            <p id="selected-job" class="selected-job"></p>
+
+            <form id="application-form">
+                <input type="hidden" id="job-title">
+
+                <label for="applicant-name">Full Name</label>
+                <input
+                    type="text"
+                    id="applicant-name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="applicant-email">Email Address</label>
+                <input
+                    type="email"
+                    id="applicant-email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label for="portfolio-link">Portfolio URL (optional)</label>
+                <input
+                    type="url"
+                    id="portfolio-link"
+                    placeholder="https://yourportfolio.com"
+                >
+
+                <label for="applicant-cv">Upload CV (PDF, DOC, DOCX)</label>
+                <input
+                    type="file"
+                    id="applicant-cv"
+                    accept=".pdf,.doc,.docx"
+                    required
+                >
+
+                <p class="form-note">
+                    Demo only. Your CV will not be uploaded to a server.
+                </p>
+
+                <button type="submit" class="primary-button submit-button">
+                    Submit Demo Application
+                </button>
+
+                <p id="form-message" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="logo">Job<span>Connect</span></a>
+        <p>© 2026 JobConnect. Frontend practice project.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
